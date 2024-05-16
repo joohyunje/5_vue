@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 적용1</title>
+    <style>
+        .btnColor {
+            background-color: ivory;
+            color: plum;
+        }
+        .btnLayout {
+            width: 120px;
+            height: 120px;
+            text-align: center;
+        }
+        .btnBorder {
+            border: red dashed 4px;
+        }
+        .staticStyle {
+            font-size: 49px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button class="staticStyle" :class="color">1테스트</button>
+        <button :class="border">2테스트</button>
+        <button :class="[layout, color, border]">3테스트</button>
+    </div>
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    const app = Vue.createApp({
+        name : 'test',
+        data (){
+            return {
+                color : 'btnColor',
+                layout : 'btnLayout',
+                border : 'btnBorder'
+            }
+        }
+    }).mount('#app')
+</script>
+</html>
