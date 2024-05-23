@@ -24,7 +24,7 @@ export default {
     name: "TodoListBox",
     components: { TodoList, InputCom },
 
-    mounted() {
+    created() {
         this.emitter.on("add", this.addTodo);
         this.emitter.on("delete", this.deleteTodo);
         this.emitter.on("toggle", this.toggleCompleted);
